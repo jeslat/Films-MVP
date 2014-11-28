@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jla.modelviewpresenter.R;
-import com.jla.modelviewpresenter.domain.Film;
+import com.jla.modelviewpresenter.model.Film;
 
 import java.util.List;
 

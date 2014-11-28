@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/tv_film_name"
-        android:textSize="30sp"
+        android:textSize="@dimen/abc_text_size_large_material"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

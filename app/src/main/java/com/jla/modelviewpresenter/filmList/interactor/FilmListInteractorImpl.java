@@ -1,13 +1,16 @@
 package com.jla.modelviewpresenter.filmList.interactor;
 
-import com.jla.modelviewpresenter.domain.Film;
+import com.jla.modelviewpresenter.api.FilmResponse;
+import com.jla.modelviewpresenter.api.TheMovieDbAdapter;
 import com.jla.modelviewpresenter.filmList.presenter.FilmsReady;
 import com.squareup.otto.Bus;
 
-import java.util.ArrayList;
-import java.util.List;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class FilmListInteractorImpl implements FilmListInteractor {
+
+    private static final String API_KEY = "20ffea664862269a108e69164352dcd8";
 
     private Bus bus;
 
@@ -17,17 +20,13 @@ public class FilmListInteractorImpl implements FilmListInteractor {
 
     @Override
     public void getFilmsList() {
-        List<Film> films = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            films.add(createRandomFilm());
-        }
-        bus.post(new FilmsReady(films));
+        new TheMovieDbAdapter().create().getPopularMovies(API_KEY, 1)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(filmResponse -> filmsReady(filmResponse));
     }
 
-    private Film createRandomFilm() {
-        Film film = new Film();
-        film.setTitle("Film" + Math.random()*10);
-        film.setYear((int) (1990 + Math.random()*10));
-        return film;
+    private void filmsReady(FilmResponse filmResponse) {
+        bus.post(new FilmsReady(filmResponse.getResults()));
     }
 }

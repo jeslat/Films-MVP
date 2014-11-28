@@ -1,6 +1,6 @@
 package com.jla.modelviewpresenter.filmList.presenter;
 
-import com.jla.modelviewpresenter.domain.Film;
+import com.jla.modelviewpresenter.model.Film;
 
 import java.util.List;
 
