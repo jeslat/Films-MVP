@@ -3,8 +3,10 @@ package com.jla.modelviewpresenter.di;
 import android.content.Context;
 
 import com.jla.modelviewpresenter.MVPApplication;
+import com.squareup.otto.Bus;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -21,7 +23,13 @@ public class RootModule {
 
     @Provides
     @Named("ApplicationContext")
-    Context provideApplicationContext() {
+    public Context provideApplicationContext() {
         return applicationContext;
+    }
+
+    @Provides
+    @Singleton
+    public Bus provideBus() {
+        return new Bus();
     }
 }
