@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.jla.modelviewpresenter.view.MVPApplication;
+import com.jla.modelviewpresenter.view.bus.MainThreadBus;
+import com.jla.modelviewpresenter.view.bus.MainThreadBusImpl;
 import com.path.android.jobqueue.JobManager;
 import com.path.android.jobqueue.config.Configuration;
 import com.path.android.jobqueue.log.CustomLogger;
@@ -26,6 +28,12 @@ public class RootModule {
     @Provides
     public Context provideApplicationContext() {
         return applicationContext;
+    }
+
+    @Provides
+    @Singleton
+    public MainThreadBus provideBus() {
+        return new MainThreadBusImpl();
     }
 
     @Provides

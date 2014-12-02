@@ -3,13 +3,13 @@ package com.jla.modelviewpresenter.view.filmList.module;
 import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
 import com.jla.modelviewpresenter.domain.interactor.GetPopularFilmsInteractor;
 import com.jla.modelviewpresenter.domain.repository.FilmRepository;
+import com.jla.modelviewpresenter.view.bus.MainThreadBus;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenterImpl;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListActivity;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListView;
 import com.jla.modelviewpresenter.view.ui.Navigator;
 import com.path.android.jobqueue.JobManager;
-import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
@@ -40,13 +40,13 @@ public class FilmListModule {
     }
 
     @Provides
-    public GetPopularFilmsInteractor provideFilmListInteractor(FilmRepository filmRepository) {
-        return new GetPopularFilmsInteractor(filmRepository);
+    public GetPopularFilmsInteractor provideFilmListInteractor(FilmRepository filmRepository, MainThreadBus mainThreadBus) {
+        return new GetPopularFilmsInteractor(filmRepository, mainThreadBus);
     }
 
     @Provides
     @Singleton
-    public FilmListPresenter providePresenter(FilmListView filmListView, GetPopularFilmsInteractor filmListInteractor, Navigator navigator, JobManager jobManager) {
-        return new FilmListPresenterImpl(filmListView, filmListInteractor, navigator, jobManager);
+    public FilmListPresenter providePresenter(FilmListView filmListView, GetPopularFilmsInteractor filmListInteractor, Navigator navigator, JobManager jobManager, MainThreadBus bus) {
+        return new FilmListPresenterImpl(filmListView, filmListInteractor, navigator, jobManager, bus);
     }
 }
