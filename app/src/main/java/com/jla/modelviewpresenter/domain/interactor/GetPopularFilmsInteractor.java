@@ -2,19 +2,15 @@ package com.jla.modelviewpresenter.domain.interactor;
 
 import android.util.Log;
 
-import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
-import com.jla.modelviewpresenter.domain.model.Film;
-import com.jla.modelviewpresenter.domain.repository.FilmRepository;
+import com.jla.modelviewpresenter.data.entity.Film;
+import com.jla.modelviewpresenter.data.repository.FilmRepository;
 import com.jla.modelviewpresenter.view.bus.MainThreadBus;
-import com.jla.modelviewpresenter.view.bus.MainThreadBusImpl;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmsReady;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.inject.Inject;
 
 import retrofit.RetrofitError;
 

@@ -2,7 +2,7 @@ package com.jla.modelviewpresenter.view.filmList.module;
 
 import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
 import com.jla.modelviewpresenter.domain.interactor.GetPopularFilmsInteractor;
-import com.jla.modelviewpresenter.domain.repository.FilmRepository;
+import com.jla.modelviewpresenter.data.repository.FilmRepository;
 import com.jla.modelviewpresenter.view.bus.MainThreadBus;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenterImpl;
