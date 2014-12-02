@@ -72,7 +72,7 @@ public class FilmListActivity extends BaseActivity implements FilmListView {
 
     @Override
     public void setFilms(List<Film> films) {
-        filmsAdapter = new FilmsAdapter(films);
+        filmsAdapter = new FilmsAdapter(films, this);
         rvFilmsList.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         rvFilmsList.setLayoutManager(layoutManager);
