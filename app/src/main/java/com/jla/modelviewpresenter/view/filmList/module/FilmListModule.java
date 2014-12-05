@@ -1,14 +1,15 @@
 package com.jla.modelviewpresenter.view.filmList.module;
 
-import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
-import com.jla.modelviewpresenter.domain.interactor.GetPopularFilmsInteractor;
 import com.jla.modelviewpresenter.data.repository.FilmRepository;
+import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
+import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractor;
+import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractorImpl;
+import com.jla.modelviewpresenter.domain.job.GetPopularFilmsJob;
 import com.jla.modelviewpresenter.view.bus.MainThreadBus;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenterImpl;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListActivity;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListView;
-import com.jla.modelviewpresenter.view.ui.Navigator;
 import com.path.android.jobqueue.JobManager;
 
 import javax.inject.Singleton;
@@ -40,13 +41,18 @@ public class FilmListModule {
     }
 
     @Provides
-    public GetPopularFilmsInteractor provideFilmListInteractor(FilmRepository filmRepository, MainThreadBus mainThreadBus) {
-        return new GetPopularFilmsInteractor(filmRepository, mainThreadBus);
+    public GetPopularFilmsJob provideGetPopularFilmsJob(FilmRepository filmRepository, MainThreadBus mainThreadBus) {
+        return new GetPopularFilmsJob(filmRepository, mainThreadBus);
+    }
+
+    @Provides
+    public PopulatePopularFilmsInteractor providePopulatePopularFilmsInteractor(JobManager jobManager, GetPopularFilmsJob getPopularFilmsJob) {
+        return new PopulatePopularFilmsInteractorImpl(jobManager, getPopularFilmsJob);
     }
 
     @Provides
     @Singleton
-    public FilmListPresenter providePresenter(FilmListView filmListView, GetPopularFilmsInteractor filmListInteractor, Navigator navigator, JobManager jobManager, MainThreadBus bus) {
-        return new FilmListPresenterImpl(filmListView, filmListInteractor, navigator, jobManager, bus);
+    public FilmListPresenter providePresenter(FilmListView filmListView, PopulatePopularFilmsInteractor populatePopularFilmsInteractor, MainThreadBus bus) {
+        return new FilmListPresenterImpl(filmListView, populatePopularFilmsInteractor, bus);
     }
 }
