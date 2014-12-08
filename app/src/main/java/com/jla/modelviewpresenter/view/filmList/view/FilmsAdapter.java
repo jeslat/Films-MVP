@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jla.modelviewpresenter.R;
-import com.jla.modelviewpresenter.data.entity.Film;
+import com.jla.modelviewpresenter.domain.model.Film;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
         viewHolder.tvFilmName.setText(films.get(position).getTitle());
         Picasso picasso = Picasso.with(context);
         picasso.setIndicatorsEnabled(true);
-        picasso.load(createPosterUri(films.get(position).getPosterPath()))
+        picasso.load(Uri.parse(films.get(position).getPoster_url()))
                 .into(viewHolder.ivFilmPicture);
     }
 
@@ -61,9 +61,5 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
             super(view);
             ButterKnife.inject(this, view);
         }
-    }
-
-    private Uri createPosterUri(String posterPath) {
-        return Uri.parse("https://image.tmdb.org/t/p/w185" + posterPath);
     }
 }

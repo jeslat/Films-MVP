@@ -1,6 +1,6 @@
 package com.jla.modelviewpresenter.domain.interactor;
 
-import com.jla.modelviewpresenter.data.entity.Film;
+import com.jla.modelviewpresenter.domain.model.Film;
 
 import java.util.List;
 

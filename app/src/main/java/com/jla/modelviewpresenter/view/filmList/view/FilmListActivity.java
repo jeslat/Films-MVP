@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.jla.modelviewpresenter.R;
-import com.jla.modelviewpresenter.data.entity.Film;
+import com.jla.modelviewpresenter.domain.model.Film;
 import com.jla.modelviewpresenter.view.filmList.module.FilmListModule;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.ui.BaseActivity;

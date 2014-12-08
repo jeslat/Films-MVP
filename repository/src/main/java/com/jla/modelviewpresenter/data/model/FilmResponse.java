@@ -1,6 +1,6 @@
-package com.jla.modelviewpresenter.data.entity;
+package com.jla.modelviewpresenter.data.model;
 
-public class Film {
+public class FilmResponse {
 
     private boolean adult;
     private String backdrop_path;
@@ -13,7 +13,7 @@ public class Film {
     private double vote_average;
     private int vote_count;
 
-    public Film(boolean adult, String backdropPath, int id, String originalTitle, String releaseDate, String posterPath, double popularity, String title, double voteAverage, int voteCount) {
+    public FilmResponse(boolean adult, String backdropPath, int id, String originalTitle, String releaseDate, String posterPath, double popularity, String title, double voteAverage, int voteCount) {
         this.adult = adult;
         this.backdrop_path = backdropPath;
         this.id = id;
