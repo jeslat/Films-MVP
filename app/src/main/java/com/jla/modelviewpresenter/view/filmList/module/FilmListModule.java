@@ -5,7 +5,7 @@ import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
 import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractor;
 import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractorImpl;
 import com.jla.modelviewpresenter.domain.job.GetPopularFilmsJob;
-import com.jla.modelviewpresenter.view.bus.MainThreadBus;
+import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenterImpl;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListActivity;

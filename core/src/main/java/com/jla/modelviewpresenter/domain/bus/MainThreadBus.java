@@ -1,4 +1,4 @@
-package com.jla.modelviewpresenter.view.bus;
+package com.jla.modelviewpresenter.domain.bus;
 
 public interface MainThreadBus {
 

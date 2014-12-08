@@ -4,8 +4,8 @@ import android.util.Log;
 
 import com.jla.modelviewpresenter.data.entity.Film;
 import com.jla.modelviewpresenter.data.repository.FilmRepository;
-import com.jla.modelviewpresenter.view.bus.MainThreadBus;
-import com.jla.modelviewpresenter.view.filmList.presenter.FilmsReady;
+import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
+import com.jla.modelviewpresenter.domain.interactor.FilmsReady;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 

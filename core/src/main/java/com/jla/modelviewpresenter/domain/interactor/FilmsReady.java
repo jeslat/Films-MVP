@@ -1,4 +1,4 @@
-package com.jla.modelviewpresenter.view.filmList.presenter;
+package com.jla.modelviewpresenter.domain.interactor;
 
 import com.jla.modelviewpresenter.data.entity.Film;
 

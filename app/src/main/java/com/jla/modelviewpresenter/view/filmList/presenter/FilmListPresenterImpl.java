@@ -1,7 +1,8 @@
 package com.jla.modelviewpresenter.view.filmList.presenter;
 
+import com.jla.modelviewpresenter.domain.interactor.FilmsReady;
 import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractor;
-import com.jla.modelviewpresenter.view.bus.MainThreadBus;
+import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListView;
 import com.squareup.otto.Subscribe;
 
