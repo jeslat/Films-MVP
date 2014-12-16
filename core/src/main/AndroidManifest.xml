@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jla.modelviewpresenterdomain">
+    package="com.jla.modelviewpresenter.domain">
 
     <application
         android:allowBackup="true"

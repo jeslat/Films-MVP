@@ -3,31 +3,31 @@ package com.jla.modelviewpresenter.domain.model;
 public class Film {
 
     private boolean adult;
-    private String backdrop_path;
+    private String backdropPath;
     private int id;
-    private String original_title;
-    private String release_date;
-    private String poster_path;
+    private String originalTitle;
+    private String releaseDate;
+    private String posterPath;
     private double popularity;
     private String title;
-    private double vote_average;
-    private int vote_count;
-    private String poster_url;
+    private double voteAverage;
+    private int voteCount;
+    private String posterUrl;
 
     public Film() {}
 
-    public Film(boolean adult, String backdrop_path, int id, String original_title, String release_date, String poster_path, double popularity, String title, double vote_average, int vote_count, String poster_url) {
+    public Film(boolean adult, String backdropPath, int id, String originalTitle, String releaseDate, String posterPath, double popularity, String title, double voteAverage, int voteCount, String posterUrl) {
         this.adult = adult;
-        this.backdrop_path = backdrop_path;
+        this.backdropPath = backdropPath;
         this.id = id;
-        this.original_title = original_title;
-        this.release_date = release_date;
-        this.poster_path = poster_path;
+        this.originalTitle = originalTitle;
+        this.releaseDate = releaseDate;
+        this.posterPath = posterPath;
         this.popularity = popularity;
         this.title = title;
-        this.vote_average = vote_average;
-        this.vote_count = vote_count;
-        this.poster_url = poster_url;
+        this.voteAverage = voteAverage;
+        this.voteCount = voteCount;
+        this.posterUrl = posterUrl;
     }
 
     public boolean isAdult() {
@@ -38,12 +38,12 @@ public class Film {
         this.adult = adult;
     }
 
-    public String getBackdrop_path() {
-        return backdrop_path;
+    public String getBackdropPath() {
+        return backdropPath;
     }
 
-    public void setBackdrop_path(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
     public int getId() {
@@ -54,28 +54,28 @@ public class Film {
         this.id = id;
     }
 
-    public String getOriginal_title() {
-        return original_title;
+    public String getOriginalTitle() {
+        return originalTitle;
     }
 
-    public void setOriginal_title(String original_title) {
-        this.original_title = original_title;
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
     }
 
-    public String getRelease_date() {
-        return release_date;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getPosterPath() {
+        return posterPath;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
     public double getPopularity() {
@@ -94,27 +94,27 @@ public class Film {
         this.title = title;
     }
 
-    public double getVote_average() {
-        return vote_average;
+    public double getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setVote_average(double vote_average) {
-        this.vote_average = vote_average;
+    public void setVoteAverage(double voteAverage) {
+        this.voteAverage = voteAverage;
     }
 
-    public int getVote_count() {
-        return vote_count;
+    public int getVoteCount() {
+        return voteCount;
     }
 
-    public void setVote_count(int vote_count) {
-        this.vote_count = vote_count;
+    public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public String getPoster_url() {
-        return poster_url;
+    public String getPosterUrl() {
+        return posterUrl;
     }
 
-    public void setPoster_url(String poster_url) {
-        this.poster_url = poster_url;
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 }

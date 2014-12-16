@@ -16,11 +16,11 @@ public class FilmListPresenterImpl implements FilmListPresenter {
         this.filmListView = filmListView;
         this.populatePopularFilmsInteractor = populatePopularFilmsInteractor;
         this.bus = bus;
-        this.bus.register(this);
     }
 
     @Override
     public void onResume() {
+        bus.register(this);
         filmListView.showProgress();
         populatePopularFilmsInteractor.populatePopularFilms();
     }
