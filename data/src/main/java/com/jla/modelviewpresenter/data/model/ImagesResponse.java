@@ -1,14 +1,40 @@
 package com.jla.modelviewpresenter.data.model;
 
+import com.j256.ormlite.field.DataType;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable
 public class ImagesResponse {
 
+    private static final String ID = "id";
+    private static final String BASE_URL = "baseUrl";
+    private static final String SECURE_BASE_URL = "secureBaseUrl";
+    private static final String BACKDROP_SIZES = "backdropSizes";
+    private static final String LOGO_SIZES = "logoSizes";
+    private static final String POSTER_SIZES = "posterSizes";
+    private static final String PROFILE_SIZES = "profileSizes";
+    private static final String STILL_SIZES = "stillSizes";
+
+    @DatabaseField(generatedId = true, columnName = ID)
+    private int id;
+    @DatabaseField(columnName = BASE_URL)
     private String base_url;
+    @DatabaseField(columnName = SECURE_BASE_URL)
     private String secure_base_url;
+    @DatabaseField(columnName = BACKDROP_SIZES, dataType = DataType.SERIALIZABLE)
     private String[] backdrop_sizes;
+    @DatabaseField(columnName = LOGO_SIZES, dataType = DataType.SERIALIZABLE)
     private String[] logo_sizes;
+    @DatabaseField(columnName = POSTER_SIZES, dataType = DataType.SERIALIZABLE)
     private String[] poster_sizes;
+    @DatabaseField(columnName = PROFILE_SIZES, dataType = DataType.SERIALIZABLE)
     private String[] profile_sizes;
+    @DatabaseField(columnName = STILL_SIZES, dataType = DataType.SERIALIZABLE)
     private String[] still_sizes;
+
+    public ImagesResponse() {
+    }
 
     public ImagesResponse(String base_url, String secure_base_url, String[] backdrop_sizes, String[] logo_sizes, String[] poster_sizes, String[] profile_sizes, String[] still_sizes) {
         this.base_url = base_url;

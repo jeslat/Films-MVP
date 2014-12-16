@@ -1,11 +1,17 @@
 package com.jla.modelviewpresenter.view.filmList.module;
 
-import com.jla.modelviewpresenter.data.repository.FilmRepository;
+import android.content.Context;
+
+import com.jla.modelviewpresenter.data.dataStore.images.ImagesDataStoreFactory;
+import com.jla.modelviewpresenter.data.dataStore.film.FilmDataStoreFactory;
 import com.jla.modelviewpresenter.data.repository.FilmRepositoryImpl;
+import com.jla.modelviewpresenter.data.repository.PreferencesRepositoryImpl;
+import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
 import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractor;
 import com.jla.modelviewpresenter.domain.interactor.PopulatePopularFilmsInteractorImpl;
 import com.jla.modelviewpresenter.domain.job.GetPopularFilmsJob;
-import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
+import com.jla.modelviewpresenter.domain.repository.FilmRepository;
+import com.jla.modelviewpresenter.domain.repository.PreferencesRepository;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenter;
 import com.jla.modelviewpresenter.view.filmList.presenter.FilmListPresenterImpl;
 import com.jla.modelviewpresenter.view.filmList.view.FilmListActivity;
@@ -36,8 +42,26 @@ public class FilmListModule {
 
     @Provides
     @Singleton
-    public FilmRepository provideFilmRepository() {
-        return new FilmRepositoryImpl();
+    public PreferencesRepository providePreferencesRepository(Context context) {
+        return new PreferencesRepositoryImpl(context);
+    }
+
+    @Provides
+    @Singleton
+    public ImagesDataStoreFactory provideConfigurationDataStoreFactory(PreferencesRepository preferencesRepository, Context context) {
+        return new ImagesDataStoreFactory(preferencesRepository, context);
+    }
+
+    @Provides
+    @Singleton
+    public FilmDataStoreFactory provideFilmDataStoreFactory(PreferencesRepository preferencesRepository, Context context) {
+        return new FilmDataStoreFactory(preferencesRepository, context);
+    }
+
+    @Provides
+    @Singleton
+    public FilmRepository provideFilmRepository(ImagesDataStoreFactory imagesDataStoreFactory, FilmDataStoreFactory filmDataStoreFactory) {
+        return new FilmRepositoryImpl(imagesDataStoreFactory, filmDataStoreFactory);
     }
 
     @Provides

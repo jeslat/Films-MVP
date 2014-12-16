@@ -41,7 +41,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
         viewHolder.tvFilmName.setText(films.get(position).getTitle());
         Picasso picasso = Picasso.with(context);
         picasso.setIndicatorsEnabled(true);
-        picasso.load(Uri.parse(films.get(position).getPoster_url()))
+        picasso.load(Uri.parse(films.get(position).getPosterUrl()))
                 .into(viewHolder.ivFilmPicture);
     }
 
