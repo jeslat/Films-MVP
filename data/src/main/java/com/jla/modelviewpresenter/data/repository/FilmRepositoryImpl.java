@@ -12,15 +12,14 @@ import com.jla.modelviewpresenter.domain.repository.FilmRepository;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class FilmRepositoryImpl implements FilmRepository {
 
-    private final ImagesDataStoreFactory imagesDataStoreFactory;
-    private final FilmDataStoreFactory filmDataStoreFactory;
-
-    public FilmRepositoryImpl(ImagesDataStoreFactory imagesDataStoreFactory, FilmDataStoreFactory filmDataStoreFactory) {
-        this.imagesDataStoreFactory = imagesDataStoreFactory;
-        this.filmDataStoreFactory = filmDataStoreFactory;
-    }
+    @Inject
+    ImagesDataStoreFactory imagesDataStoreFactory;
+    @Inject
+    FilmDataStoreFactory filmDataStoreFactory;
 
     @Override
     public List<Film> getPopularFilms() {
