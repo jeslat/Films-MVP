@@ -4,5 +4,6 @@
     <string name="app_name">ModelViewPresenter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_film_detail">Film Detail</string>
 
 </resources>

@@ -2,5 +2,5 @@ package com.jla.modelviewpresenter.view.ui;
 
 public interface Navigator {
 
-    public void navigateToDetail();
+    public void navigateToDetail(int filmId);
 }

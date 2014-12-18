@@ -32,11 +32,13 @@ public class FilmListActivity extends BaseActivity implements FilmListView {
 
     private RecyclerView.Adapter filmsAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.OnItemTouchListener onItemTouch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.film_list_activity);
         super.onCreate(savedInstanceState);
+        onItemTouch = new RecyclerItemClickListener(this, (view, position) -> presenter.onItemClicked(position));
     }
 
     @Override
@@ -49,6 +51,7 @@ public class FilmListActivity extends BaseActivity implements FilmListView {
     protected void onPause() {
         super.onPause();
         presenter.onPause();
+        rvFilmsList.removeOnItemTouchListener(onItemTouch);
     }
 
     @Override
@@ -77,5 +80,6 @@ public class FilmListActivity extends BaseActivity implements FilmListView {
         layoutManager = new LinearLayoutManager(this);
         rvFilmsList.setLayoutManager(layoutManager);
         rvFilmsList.setAdapter(filmsAdapter);
+        rvFilmsList.addOnItemTouchListener(onItemTouch);
     }
 }
