@@ -2,6 +2,45 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
                 tools:context="com.jla.modelviewpresenter.view.filmDetail.view.FilmDetailActivity">
+
+    <ImageView
+        android:id="@+id/iv_picture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_picture"
+        android:layout_marginTop="20dp"
+        android:text="Title"/>
+
+    <TextView
+        android:id="@+id/tv_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="10dp"
+        android:text="Release date"/>
+
+    <TextView
+        android:id="@+id/tv_vote_average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_release_date"
+        android:layout_marginTop="10dp"
+        android:text="Vote average"/>
+
+    <TextView
+        android:id="@+id/tv_vote_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_vote_average"
+        android:layout_marginTop="10dp"
+        android:text="Vote count"/>
 
 </RelativeLayout>

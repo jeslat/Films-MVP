@@ -7,8 +7,6 @@ import com.jla.modelviewpresenter.view.filmDetail.view.FilmDetailActivity;
 
 public class NavigatorImpl implements Navigator {
 
-    public static final String FILM_ID = "id";
-
     private Activity activityContext;
 
     public NavigatorImpl(Activity activity) {

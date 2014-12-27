@@ -29,4 +29,13 @@ public class FilmRepositoryImpl implements FilmRepository {
         List<FilmResponse> filmResponses = filmDataStore.getPopularFilmResponse();
         return FilmResponseDataMapper.transform(filmResponses, imagesResponse);
     }
+
+    @Override
+    public Film getPopularFilm(int id) {
+        FilmDataStore filmDataStore = filmDataStoreFactory.create();
+        ImagesDataStore imagesDataStore = imagesDataStoreFactory.create();
+        ImagesResponse imagesResponse = imagesDataStore.getImagesResponse();
+        FilmResponse filmResponse = filmDataStore.getFilmResponse(id);
+        return FilmResponseDataMapper.transform(filmResponse, imagesResponse);
+    }
 }

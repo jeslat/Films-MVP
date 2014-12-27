@@ -21,7 +21,7 @@ public class FilmResponse {
     private boolean adult;
     @DatabaseField(columnName = BACKDROP_PATH)
     private String backdrop_path;
-    @DatabaseField(columnName = ID)
+    @DatabaseField(columnName = ID, id = true)
     private int id;
     @DatabaseField(columnName = ORIGINAL_TITLE)
     private String original_title;

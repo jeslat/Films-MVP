@@ -9,4 +9,6 @@ public interface FilmDataStore {
     public List<FilmResponse> getPopularFilmResponse();
 
     public void savePopularFilmResponse(List<FilmResponse> popularFilmResponse);
+
+    public FilmResponse getFilmResponse(int id);
 }

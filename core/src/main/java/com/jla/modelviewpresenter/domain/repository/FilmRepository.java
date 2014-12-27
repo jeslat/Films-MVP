@@ -8,4 +8,6 @@ import java.util.List;
 public interface FilmRepository {
     
     public List<Film> getPopularFilms();
+
+    public Film getPopularFilm(int id);
 }

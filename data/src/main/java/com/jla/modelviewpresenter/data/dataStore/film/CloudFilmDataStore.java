@@ -30,4 +30,9 @@ public class CloudFilmDataStore implements FilmDataStore {
     public void savePopularFilmResponse(List<FilmResponse> popularFilmResponse) {
         throw new UnsupportedOperationException("Not supported method");
     }
+
+    @Override
+    public FilmResponse getFilmResponse(int id) {
+        throw new UnsupportedOperationException("Not supported method");
+    }
 }

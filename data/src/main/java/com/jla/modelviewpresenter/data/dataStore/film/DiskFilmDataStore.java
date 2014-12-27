@@ -52,4 +52,21 @@ public class DiskFilmDataStore implements FilmDataStore {
             OpenHelperManager.releaseHelper();
         }
     }
+
+    @Override
+    public FilmResponse getFilmResponse(int id) {
+        DbHelper dbHelper = OpenHelperManager.getHelper(context, DbHelper.class);
+        Dao filmResponseDao;
+        FilmResponse filmResponse = null;
+        try {
+            filmResponseDao = dbHelper.getFilmResponseDao();
+            filmResponse = (FilmResponse) filmResponseDao.queryForId(id);
+        } catch (SQLException e) {
+            Log.e(TAG, e.getMessage());
+        } finally {
+            OpenHelperManager.releaseHelper();
+        }
+
+        return filmResponse;
+    }
 }
