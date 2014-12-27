@@ -2,45 +2,46 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 tools:context="com.jla.modelviewpresenter.view.filmDetail.view.FilmDetailActivity">
 
     <ImageView
         android:id="@+id/iv_picture"
-        android:layout_width="150dp"
-        android:layout_height="150dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_picture"
+        android:textSize="@dimen/abc_text_size_headline_material"
         android:layout_marginTop="20dp"
-        android:text="Title"/>
+        android:text="prueba"/>
 
     <TextView
         android:id="@+id/tv_release_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_title"
-        android:layout_marginTop="10dp"
-        android:text="Release date"/>
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_vote_average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_release_date"
-        android:layout_marginTop="10dp"
-        android:text="Vote average"/>
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_vote_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_vote_average"
-        android:layout_marginTop="10dp"
-        android:text="Vote count"/>
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

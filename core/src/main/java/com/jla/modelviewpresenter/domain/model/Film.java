@@ -13,10 +13,11 @@ public class Film {
     private double voteAverage;
     private int voteCount;
     private String posterUrl;
+    private String largePosterUrl;
 
     public Film() {}
 
-    public Film(boolean adult, String backdropPath, int id, String originalTitle, String releaseDate, String posterPath, double popularity, String title, double voteAverage, int voteCount, String posterUrl) {
+    public Film(boolean adult, String backdropPath, int id, String originalTitle, String releaseDate, String posterPath, double popularity, String title, double voteAverage, int voteCount, String posterUrl, String largePosterUrl) {
         this.adult = adult;
         this.backdropPath = backdropPath;
         this.id = id;
@@ -28,6 +29,7 @@ public class Film {
         this.voteAverage = voteAverage;
         this.voteCount = voteCount;
         this.posterUrl = posterUrl;
+        this.largePosterUrl = largePosterUrl;
     }
 
     public boolean isAdult() {
@@ -116,5 +118,13 @@ public class Film {
 
     public void setPosterUrl(String posterUrl) {
         this.posterUrl = posterUrl;
+    }
+
+    public String getLargePosterUrl() {
+        return largePosterUrl;
+    }
+
+    public void setLargePosterUrl(String largePosterUrl) {
+        this.largePosterUrl = largePosterUrl;
     }
 }

@@ -1,7 +1,10 @@
 package com.jla.modelviewpresenter.view.filmDetail.presenter;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 
+import com.jla.modelviewpresenter.R;
 import com.jla.modelviewpresenter.domain.bus.MainThreadBus;
 import com.jla.modelviewpresenter.domain.interactor.FilmReady;
 import com.jla.modelviewpresenter.domain.interactor.FindPopularFilmInteractor;
@@ -33,11 +36,12 @@ public class FilmDetailPresenterImpl implements FilmDetailPresenter {
 
     @Subscribe
     public void filmAvailable(FilmReady filmReady){
+        Context context = (Activity) view;
         Film film = filmReady.getFilm();
-        view.setPicture(Uri.parse(film.getPosterUrl()));
-        view.setTitle(film.getTitle());
-        view.setReleaseDate(film.getReleaseDate());
-        view.setVoteAverage(String.valueOf(film.getVoteAverage()));
-        view.setVoteCount(String.valueOf(film.getVoteCount()));
+        view.setPicture(Uri.parse(film.getLargePosterUrl()));
+        view.setTitle(context.getString(R.string.title) + film.getTitle());
+        view.setReleaseDate(context.getString(R.string.release_date) + film.getReleaseDate());
+        view.setVoteAverage(context.getString(R.string.vote_average) + String.valueOf(film.getVoteAverage()));
+        view.setVoteCount(context.getString(R.string.vote_count) + String.valueOf(film.getVoteCount()));
     }
 }

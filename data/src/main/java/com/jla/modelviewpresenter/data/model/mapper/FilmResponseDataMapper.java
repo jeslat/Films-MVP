@@ -22,6 +22,7 @@ public class FilmResponseDataMapper {
         film.setVoteAverage(filmResponse.getVoteAverage());
         film.setVoteCount(filmResponse.getVoteCount());
         film.setPosterUrl(createPosterUrl(film.getPosterPath(), imagesResponse));
+        film.setLargePosterUrl(createLargePosterUrl(film.getPosterPath(), imagesResponse));
         return film;
     }
 
@@ -35,5 +36,9 @@ public class FilmResponseDataMapper {
 
     private static String createPosterUrl(String posterPath, ImagesResponse imagesResponse) {
         return imagesResponse.getSecure_base_url() + imagesResponse.getPoster_sizes()[1] + posterPath;
+    }
+
+    private static String createLargePosterUrl(String posterPath, ImagesResponse imagesResponse) {
+        return imagesResponse.getSecure_base_url() + imagesResponse.getPoster_sizes()[3] + posterPath;
     }
 }
