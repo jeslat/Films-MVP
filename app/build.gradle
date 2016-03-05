@@ -3,7 +3,7 @@ apply plugin: 'retrolambda'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.jla.modelviewpresenter"
